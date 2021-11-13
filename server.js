@@ -16,9 +16,17 @@ app.get('/notes', (req, res)=>{
 })
 
 app.get('/api/notes/:id', (req, res)=>{
-    const forId = notes.some(notes => notes.id === parseInt(req.params.id))
+
+       res.json(notes.filter(notes => notes.id === parseInt(req.params.id)))
 })
 
+app.delete('/api/notes/:id', (req, res)=>{
+
+    res.json(notes.filter(notes => notes.id !== parseInt(req.params.id)))
+
+
+    
+})
 app.post('/api/notes', (req,res)=>{
      const newNote = {
          id: req.body.id = notes.length.toString(),
@@ -26,7 +34,7 @@ app.post('/api/notes', (req,res)=>{
          text: req.body.text
      }
      if(!newNote.text || !newNote.text){
-         res.status(400).json({msg: ERROR})
+         res.status(400).json({msg: 'ERROR'})
      }
      notes.push(newNote)
      res.json(newNote)
@@ -39,5 +47,5 @@ app.get('*', (req,res)=>{
 
 
 app.listen(PORT, ()=>{
-console.log(`Server Has Started On Port ${PORT}`)
+console.log(`Server Has Started`)
 } )
