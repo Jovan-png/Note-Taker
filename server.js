@@ -15,8 +15,13 @@ app.get('/notes', (req, res)=>{
     res.sendFile(path.join(__dirname, './public/notes.html'))
 })
 
+app.get('/api/notes/:id', (req, res)=>{
+    const forId = notes.some(notes => notes.id === parseInt(req.params.id))
+})
+
 app.post('/api/notes', (req,res)=>{
      const newNote = {
+         id: req.body.id = notes.length.toString(),
          title: req.body.title,
          text: req.body.text
      }
