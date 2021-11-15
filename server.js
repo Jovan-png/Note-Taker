@@ -6,12 +6,12 @@ const fs = require('fs')
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json())
-
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/api/notes', (req, res)=>{
     res.json(notes)
 })
-
+// Makes /notes display notes.html
 app.get('/notes', (req, res)=>{
     res.sendFile(path.join(__dirname, './public/notes.html'))
 })
@@ -20,24 +20,14 @@ app.get('/api/notes/:id', (req, res)=>{
 
        res.json(notes.filter(notes => notes.id === parseInt(req.params.id)))
 })
-
+// Allows you to delete by id, Couldn't get it to work
 app.delete('/api/notes/:id', (req, res)=>{
 const delNote = notes.some(notes => notes.id === parseInt(req.params.id))
 if(delNote){
-    res.json(notes.filter(notes => notes.id !== parseInt(req.params.id)))
+    res.json(notes.filter(notes => notes.id !== parseInt(req.params.id)));
+    }else{
+        res.status(404)
     }
-})
-
-app.put('/api/notes/:id', (req, res)=>{
-
-        notes.forEach(notes =>{
-            if(notes.id === req.params.id){
-                notes.title = req.body.title;
-                notes.text = req.body.text;
-
-                res.json('Hello')
-            }
-        })
 })
 
 // Creates new Note with unique ID.
@@ -54,14 +44,14 @@ app.post('/api/notes', (req,res)=>{
      res.json(newNote)
 })
 
-app.use(express.static(path.join(__dirname, 'public')))
+
 
 // Makes the default page "index.html"
 app.get('*', (req,res)=>{
     res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
-
+// Creates the server on a certain PORT
 app.listen(PORT, ()=>{
 console.log(`Server Has Started`)
 } )
