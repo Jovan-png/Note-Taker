@@ -25,7 +25,7 @@ N/A
 
 ## Link
 
-Here is a live link to the [Website](https://note-taker-jovan.herokuapp.com/notes)
+Here is a live link to the [Website](https://note-taker-jovan.herokuapp.com)
 
 ## Tests
 
