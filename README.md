@@ -4,7 +4,7 @@
 
 ## Description
 
-    The Note Taker app allows users to inset a title for their note and text for it. The information is save well after you close the page!
+The Note Taker app allows users to inset a title for their note and text for it. The information is save well after you close the page!
 
 ## Tables Of Contents
 
@@ -62,3 +62,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+## Screenshot
+![screencapture-note-taker-jovan-herokuapp-notes-2021-11-14-19_09_45](https://user-images.githubusercontent.com/88255194/141707226-bda2a333-c527-4392-a925-245aeafcc4a0.png)
