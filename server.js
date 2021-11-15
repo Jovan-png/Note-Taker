@@ -3,7 +3,7 @@ const app = express()
 const {notes} = require('./db/db.json')
 const path = require('path')
 const fs = require('fs')
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
