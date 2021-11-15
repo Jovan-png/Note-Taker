@@ -20,15 +20,6 @@ app.get('/api/notes/:id', (req, res)=>{
 
        res.json(notes.filter(notes => notes.id === parseInt(req.params.id)))
 })
-// Allows you to delete by id, Couldn't get it to work
-app.delete('/api/notes/:id', (req, res)=>{
-const delNote = notes.some(notes => notes.id === parseInt(req.params.id))
-if(delNote){
-    res.json(notes.filter(notes => notes.id !== parseInt(req.params.id)));
-    }else{
-        res.status(404)
-    }
-})
 
 // Creates new Note with unique ID.
 app.post('/api/notes', (req,res)=>{
