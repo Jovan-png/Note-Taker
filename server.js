@@ -28,9 +28,6 @@ app.post('/api/notes', (req,res)=>{
          title: req.body.title,
          text: req.body.text
      }
-     if(!newNote.text || !newNote.text){
-         res.status(400).json({msg: 'ERROR'})
-     }
      notes.push(newNote)
      res.json(newNote)
 })
